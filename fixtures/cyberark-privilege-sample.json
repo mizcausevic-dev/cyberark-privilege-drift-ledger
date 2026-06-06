@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-06-06T00:00:00Z",
+  "portfolio": "CyberArk privilege drift review",
+  "lanes": [
+    {
+      "name": "Domain admin safes",
+      "owner": "Identity security lead",
+      "businessUnit": "Enterprise IT",
+      "standingAccounts": 42,
+      "staleSafes": 7,
+      "unmanagedSessions": 18,
+      "rotationSlaBreaches": 9,
+      "breakGlassAccounts": 5,
+      "lastReviewedDays": 41,
+      "criticalSystems": ["Active Directory", "Tier 0 admin"],
+      "nextAction": "Expire stale safe membership and force dual-control review for dormant domain-admin accounts."
+    },
+    {
+      "name": "Cloud privilege vault",
+      "owner": "Cloud platform owner",
+      "businessUnit": "Cloud operations",
+      "standingAccounts": 31,
+      "staleSafes": 5,
+      "unmanagedSessions": 11,
+      "rotationSlaBreaches": 6,
+      "breakGlassAccounts": 3,
+      "lastReviewedDays": 29,
+      "criticalSystems": ["AWS IAM", "Azure subscription owners", "GCP project admins"],
+      "nextAction": "Tie privileged cloud accounts to named owners and rotate secrets ahead of the next access recertification."
+    },
+    {
+      "name": "Database admin vault",
+      "owner": "Data platform steward",
+      "businessUnit": "Analytics and warehouse",
+      "standingAccounts": 24,
+      "staleSafes": 3,
+      "unmanagedSessions": 8,
+      "rotationSlaBreaches": 4,
+      "breakGlassAccounts": 2,
+      "lastReviewedDays": 18,
+      "criticalSystems": ["Snowflake", "SQL Server", "Oracle"],
+      "nextAction": "Reduce shared database administrator credentials and attach approval evidence to every privileged session."
+    },
+    {
+      "name": "Vendor maintenance access",
+      "owner": "Third-party risk lead",
+      "businessUnit": "Procurement and security",
+      "standingAccounts": 19,
+      "staleSafes": 6,
+      "unmanagedSessions": 15,
+      "rotationSlaBreaches": 8,
+      "breakGlassAccounts": 4,
+      "lastReviewedDays": 54,
+      "criticalSystems": ["ERP support", "Network appliances", "Managed service provider"],
+      "nextAction": "Move vendor maintenance access to just-in-time windows with explicit ticket and contract references."
+    }
+  ]
+}
+
