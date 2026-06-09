@@ -63,7 +63,7 @@ const html = `<!doctype html>
     h1 { font-size: clamp(48px, 9vw, 112px); line-height: .86; letter-spacing: -0.075em; margin: 0 0 28px; max-width: 980px; }
     .lede { max-width: 820px; color: var(--muted); font-size: clamp(18px, 2vw, 24px); line-height: 1.55; }
     .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 34px; }
-    .metric, .lane, .rec { background: rgba(16, 26, 40, .78); border: 1px solid rgba(174,184,200,.14); border-radius: 20px; padding: 22px; }
+    .metric, .lane, .rec, .proof-card { background: rgba(16, 26, 40, .78); border: 1px solid rgba(174,184,200,.14); border-radius: 20px; padding: 22px; }
     .metric b { display: block; font-size: 36px; letter-spacing: -0.04em; color: var(--cyan); }
     .metric span, .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .16em; font-size: 11px; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
@@ -74,10 +74,12 @@ const html = `<!doctype html>
     dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .14em; }
     dd { margin: 4px 0 0; }
     .rec { border-color: rgba(85,240,180,.3); margin-top: 18px; }
+    .proof { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; margin-top:18px; }
+    .proof-card h3 { margin:8px 0 10px; }
     footer { color: var(--muted); padding: 30px 0 0; display: flex; gap: 18px; flex-wrap: wrap; }
     a { color: var(--cyan); }
     @media (max-width: 780px) {
-      .metrics, .grid { grid-template-columns: 1fr; }
+      .metrics, .grid, .proof { grid-template-columns: 1fr; }
       .brand { align-items: flex-start; flex-direction: column; }
     }
   </style>
@@ -105,6 +107,14 @@ const html = `<!doctype html>
       <h3>${ledger.recommendation}</h3>
       <p>Use this as a diligence packet for CyberArk, PAM, IAM, and security-governance review without exposing raw vault data.</p>
     </section>
+    <section class="proof" aria-label="Product depth and shared pattern">
+      <article class="proof-card"><p class="eyebrow">Product purpose</p><h3>What this product does</h3><p>Turns stale safes, unmanaged sessions, standing accounts, rotation breaches, break-glass sprawl, and owner gaps into a remediation ledger for security and audit leaders.</p></article>
+      <article class="proof-card"><p class="eyebrow">Buyer lens</p><h3>Why executives care</h3><p>Privileged access risk is expensive because it is usually discovered after an audit, incident, or control failure. This makes the exposure visible while there is still time to fix it.</p></article>
+      <article class="proof-card"><p class="eyebrow">Value architecture</p><h3>How it turns into action</h3><p>The ledger assigns each drift lane an owner and next move so teams can shrink standing access, close rotation gaps, and prove CyberArk value without raw vault exports.</p></article>
+      <article class="proof-card"><p class="eyebrow">Technical proof</p><h3>What reviewers can inspect</h3><p>The repo keeps synthetic ledger data, deterministic rendering, public JSON, and CI-verifiable output together while avoiding secrets, session logs, and production IAM records.</p></article>
+      <article class="proof-card"><p class="eyebrow">What these repos have in common</p><h3>Platform complexity becomes board-ready operating proof.</h3><p>Each repo names a buyer pain, exposes an evidence model, produces a reusable decision surface, and keeps the demo boundary safe with synthetic data.</p></article>
+      <article class="proof-card"><p class="eyebrow">Interlinks</p><h3>Where this fits</h3><p><a href="https://portfolio.kineticgain.com/">Portfolio</a> · <a href="https://kineticgain.com/">Kinetic Gain</a> · <a href="https://github.com/mizcausevic-dev/cyberark-privilege-drift-ledger">GitHub</a></p></article>
+    </section>
     <footer>
       <span>CyberArk Privilege Drift Ledger</span>
       <a href="ledger.json">ledger.json</a>
@@ -121,4 +131,3 @@ fs.writeFileSync(
   '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://mizcausevic-dev.github.io/cyberark-privilege-drift-ledger/</loc></url></urlset>',
 );
 console.log("Prerendered site/index.html");
-
